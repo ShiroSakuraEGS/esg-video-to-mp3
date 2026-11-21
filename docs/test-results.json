@@ -1,0 +1,83 @@
+{
+  "when": "2026-11-21T08:31:15.882Z",
+  "isolatedExpected": false,
+  "results": [
+    {
+      "id": "AC-01a",
+      "ok": true,
+      "detail": "COOP=(none) COEP=(none)"
+    },
+    {
+      "id": "AC-01b",
+      "ok": true,
+      "detail": "crossOriginIsolated=false"
+    },
+    {
+      "id": "AC-07a",
+      "ok": true,
+      "detail": "privacy text present: 檔案不會離開你的裝置：轉換完全在瀏覽器本機進行，不會上傳到伺服器，也不接受或抓取…"
+    },
+    {
+      "id": "AC-07b",
+      "ok": true,
+      "detail": "url inputs=0"
+    },
+    {
+      "id": "AC-02-wav",
+      "ok": true,
+      "detail": "name=sample.mp3 codec=mp3 dur=5.04 br=192000"
+    },
+    {
+      "id": "AC-03",
+      "ok": true,
+      "detail": "bitrate 192000 vs 192000"
+    },
+    {
+      "id": "AC-02-sample.mp4",
+      "ok": true,
+      "detail": "suggested=sample.mp3 codec=mp3 dur=5.041633 br=193227"
+    },
+    {
+      "id": "AC-02-sample.webm",
+      "ok": true,
+      "detail": "suggested=sample.mp3 codec=mp3 dur=5.04 br=192985"
+    },
+    {
+      "id": "AC-02-sample.mov",
+      "ok": true,
+      "detail": "suggested=sample.mp3 codec=mp3 dur=5.041633 br=193208"
+    },
+    {
+      "id": "AC-02-sample.mkv",
+      "ok": true,
+      "detail": "suggested=sample.mp3 codec=mp3 dur=5.067755 br=193059"
+    },
+    {
+      "id": "AC-04",
+      "ok": true,
+      "detail": "codec=mp3 dur=2.037551 (expect ~2s)"
+    },
+    {
+      "id": "AC-05",
+      "ok": true,
+      "detail": "count=2 names=sample.mp3,sample.mp3 dur=5.04,5.04"
+    },
+    {
+      "id": "AC-err-unsupported",
+      "ok": true,
+      "detail": "不支援的格式：瀏覽器與本機引擎都無法解碼此檔案。"
+    },
+    {
+      "id": "AC-06-mobile-ui",
+      "ok": true,
+      "detail": "pick=true convertAll=true"
+    },
+    {
+      "id": "AC-06-console",
+      "ok": true,
+      "detail": "consoleErrors=[] pageErrors=[]"
+    }
+  ],
+  "consoleErrors": [],
+  "pageErrors": []
+}

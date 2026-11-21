@@ -1,0 +1,4 @@
+@ffmpeg/ffmpeg 0.12.15 (MIT) — JS wrapper, vendored from npm dist/esm
+@ffmpeg/core 0.12.10 (GPL-2.0-or-later) — single-thread ffmpeg-core.js + ffmpeg-core.wasm
+@ffmpeg/util 0.12.2 (MIT)
+lamejs 1.2.1 (LGPL-3.0) — lame.min.js only (testdata omitted)
