@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="在瀏覽器本機把你自己的影片或音訊轉成 MP3。檔案不會上傳。">
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <title>本機轉 MP3｜CI-2026-002</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="app-header">
+      <div class="brand">
+        <h1 data-i18n="title">本機影片／音訊轉 MP3</h1>
+        <p data-i18n="tagline">檔案只在你的瀏覽器裡轉換，不會上傳。</p>
+      </div>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="zh" aria-pressed="true">繁體中文</button>
+        <button type="button" data-lang="en" aria-pressed="false">English</button>
+      </div>
+    </header>
+
+    <section class="notices" aria-label="Notices">
+      <div class="notice legal">
+        <strong data-i18n="privacyTitle">隱私</strong>
+        <div data-i18n="privacy">檔案不會離開你的裝置：轉換完全在瀏覽器本機進行，不會上傳到伺服器，也不接受或抓取任何網址。</div>
+      </div>
+      <div class="notice legal">
+        <strong data-i18n="copyrightTitle">著作權</strong>
+        <div data-i18n="copyright">請只轉換你擁有、或已獲得授權的內容。本工具不是 YouTube、小紅書或其他平台的下載器。</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div id="drop" class="drop" data-testid="dropzone">
+        <p data-i18n="drop">把檔案拖放進來，或從裝置選擇（可一次多個）。</p>
+        <button type="button" class="file-btn" id="pick-btn" data-i18n="pick">選擇檔案</button>
+        <input id="file-input" class="sr-only" type="file" accept=".mp4,.mov,.webm,.mkv,.m4a,.wav,.mp3,.aac,.ogg,.oga,.opus,.flac,.avi,.mpeg,.mpg,.m4v,.3gp,.aiff,.aif" multiple data-testid="file-input">
+        <p class="hint" data-i18n="formats">常見格式：mp4、mov、webm、mkv、m4a、wav、mp3、aac、ogg 等。</p>
+      </div>
+      <div class="settings">
+        <label class="field">
+          <span data-i18n="bitrate">MP3 位元率</span>
+          <select id="bitrate" data-testid="bitrate">
+            <option value="128">128 kbps</option>
+            <option value="192" selected>192 kbps</option>
+            <option value="320">320 kbps</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="queue-heading">
+      <div class="queue-head">
+        <h2 id="queue-heading" data-i18n="queue">轉換佇列</h2>
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="convert-all" data-i18n="convertAll" data-testid="convert-all">全部轉換</button>
+          <button type="button" class="btn btn-ghost" id="clear-done" data-i18n="clearDone">清除已完成</button>
+          <button type="button" class="btn btn-ghost" id="clear-all" data-i18n="clearAll">清空佇列</button>
+        </div>
+      </div>
+      <p class="hint" data-i18n="trimHint">留空代表整段。終點需大於起點。</p>
+      <div id="queue-list" data-testid="queue-list"></div>
+    </section>
+
+    <footer class="app-footer">
+      <p data-i18n="footerLic">授權與第三方元件（請一併閱讀 NOTICE）</p>
+      <ul>
+        <li>本專案原創程式碼建議以 MIT 授權（見倉庫 LICENSE.SUGGESTION.md，尚未正式宣告）。</li>
+        <li>@ffmpeg/core 0.12.10（單執行緒）為 GPL-2.0-or-later。</li>
+        <li>@ffmpeg/ffmpeg、@ffmpeg/util 為 MIT。</li>
+        <li>lamejs 1.2.1／LAME 為 LGPL-3.0。lame.sourceforge.net</li>
+      </ul>
+      <p>CI-2026-002 · Creative Institute</p>
+    </footer>
+  </div>
+  <script src="./vendor/lamejs/lame.min.js"></script>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

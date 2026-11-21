@@ -1,0 +1,34 @@
+CI-2026-002 第三方元件與授權聲明
+================================
+
+本工具在瀏覽器本機轉換使用者自己的影音檔。發行本專案（含 site/vendor 內嵌檔）時，請一併遵守下列授權。
+
+1. 本專案原創程式碼（site/js、site/css、site/index.html，以及 docs/ 與測試腳本中我們撰寫的部分）
+   建議以 MIT License 授權。正式 LICENSE 檔尚未加入；見 LICENSE.SUGGESTION.md。
+
+2. @ffmpeg/ffmpeg 0.12.15
+   授權：MIT
+   來源：https://github.com/ffmpegwasm/ffmpeg.wasm
+   用途：在 Web Worker 中呼叫 FFmpeg。
+
+3. @ffmpeg/util 0.12.2
+   授權：MIT
+   來源：同上倉庫
+   用途：toBlobURL、fetchFile 等輔助函式。
+
+4. @ffmpeg/core 0.12.10（single-thread 建置，ffmpeg-core.js + ffmpeg-core.wasm）
+   授權：GPL-2.0-or-later（npm 套件宣告）
+   來源：https://github.com/ffmpegwasm/ffmpeg.wasm
+   說明：這是 FFmpeg 的 WebAssembly 單執行緒核心，不是 multi-thread（core-mt）建置。
+   因 GitHub Pages 無法設定 COOP/COEP，無法使用需要 SharedArrayBuffer 的多執行緒核心。
+   若你再散布本倉庫中的 @ffmpeg/core 二進位，須自行確認已滿足 GPL-2.0-or-later 的義務。
+   FFmpeg 專案本身依其組態可能涉及 LGPL 或 GPL：https://ffmpeg.org/legal.html
+
+5. lamejs 1.2.1（僅內嵌 lame.min.js，未包含套件 testdata）
+   授權：LGPL-3.0
+   來源：https://github.com/zhuker/lamejs
+   以獨立腳本方式載入（未修改原始碼）。
+   LAME 專案：https://lame.sourceforge.net
+   LGPL 要求：若你修改 LAME／lamejs，須以 LGPL 公開該等修改。
+
+本工具執行期不從 CDN 載入上述函式庫（皆置於 site/vendor/）。
